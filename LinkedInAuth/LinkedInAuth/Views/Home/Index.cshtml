@@ -1,0 +1,18 @@
+﻿@model object
+
+@using Newtonsoft.Json
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<html>
+<body>
+    @if (User.Identity.IsAuthenticated)
+    {
+    <pre>
+@JsonConvert.SerializeObject(Model, Formatting.Indented)
+   </pre>
+
+    <a asp-controller="Home" asp-action="SignOut">sign out</a>
+    }
+</body>
+</html>
